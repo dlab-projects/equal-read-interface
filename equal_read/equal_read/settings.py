@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books'
+    'haystack',
+    'books',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,10 +79,10 @@ WSGI_APPLICATION = 'equal_read.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'equal_read',
-        'USER': 'postgres',
-        'PASSWORD': 'equal_read',
-        'HOST': '127.0.0.1',
+        'NAME': 'd9d9lfa4cdpki9',
+        'USER': 'mzgvulzqwquzlh',
+        'PASSWORD': '-om8F6kEdeTQuRT8DpJ4x_vzQt',
+        'HOST': 'ec2-107-21-223-110.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -105,6 +106,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}
+
+# HAYSTACK_SITECONF = 'equal_read.search_sites'
+# HAYSTACK_SEARCH_ENGINE = 'whoosh'
+# HAYSTACK_WHOOSH_PATH = os.path.join(BASE_DIR, 'whoosh_index')
 
 
 # # Parse database configuration from $DATABASE_URL
