@@ -22,7 +22,7 @@ class Command(BaseCommand):
                 if row[1] == '':
                     row[1] = 'dlab'
                 if row[2] == '':
-                    row[2] = str(random.choice(range(int(1e12), int(1e13))))
+                    row[2] = 'Not available'
                 if row[4] == '':
                     row[4] = random.choice(authors)
                 if row[5] == '':
@@ -54,7 +54,7 @@ class Command(BaseCommand):
                 if row[18] == '':
                     row[18] = 'Bachelor'
                 if row[19] == '':
-                    row[19] = str(random.choice(range(int(1e5))))
+                    row[19] = 'Not available'
                 if row[20] == '':
                     row[20] = 'unknown'
                 if row[21] == '':
