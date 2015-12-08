@@ -1,5 +1,3 @@
+venv
 *.pyc
-<<<<<<< HEAD
-db.sqlite3
-=======
->>>>>>> b786c89ab44dc63ca0f24169e9ef05e929382ec2
+staticfiles
