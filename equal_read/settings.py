@@ -76,17 +76,7 @@ WSGI_APPLICATION = 'equal_read.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9d9lfa4cdpki9',
-        'USER': 'mzgvulzqwquzlh',
-        'PASSWORD': '-om8F6kEdeTQuRT8DpJ4x_vzQt',
-        'HOST': 'ec2-107-21-223-110.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-
+DATABASES = {}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -115,9 +105,22 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-# HAYSTACK_SITECONF = 'equal_read.search_sites'
-# HAYSTACK_SEARCH_ENGINE = 'whoosh'
-# HAYSTACK_WHOOSH_PATH = os.path.join(BASE_DIR, 'whoosh_index')
 
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+# Static asset configuration
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)

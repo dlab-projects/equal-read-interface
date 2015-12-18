@@ -1,17 +1,5 @@
-<html>
 
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<title> Search</title>
 
-<style type="text/css">
-h2 {
-    color: red !important;
-}
-</style>
-</head>
-
-<body>
 {% block content %}
     <h2>Search</h2>
 
@@ -27,7 +15,7 @@ h2 {
         </table>
 
         {% if query %}
-            <h3>Search Results</h3>
+            <h3>Search results</h3>
 
             {% for result in page.object_list %}
                 <p>
@@ -49,5 +37,3 @@ h2 {
         {% endif %}
     </form>
 {% endblock %}
-</body>
-</html>
