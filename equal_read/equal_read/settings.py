@@ -118,6 +118,3 @@ HAYSTACK_CONNECTIONS = {
 # HAYSTACK_SITECONF = 'equal_read.search_sites'
 # HAYSTACK_SEARCH_ENGINE = 'whoosh'
 # HAYSTACK_WHOOSH_PATH = os.path.join(BASE_DIR, 'whoosh_index')
-
-
-
